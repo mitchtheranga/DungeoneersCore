@@ -16,11 +16,10 @@ public final class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         plugin = this;
+        checkStats();
         registerEvents();
         getCommand("testitem").setExecutor(new GiveTestItem());
         getCommand("checkstats").setExecutor(new CheckStatsCommand());
-
-        checkStats();
     }
 
     @Override
