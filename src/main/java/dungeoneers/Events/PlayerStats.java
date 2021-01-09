@@ -1,10 +1,8 @@
-package dungeoneers.PlayerEvents;
+package dungeoneers.Events;
 
-import dungeoneers.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -31,11 +29,11 @@ public class PlayerStats {
             return;
         }
         Player player = Bukkit.getPlayer(playerUUID);
-        playerHealth.put(playerUUID, checkStat(player, "Health:"));
+        playerHealth.put(playerUUID, 100 + checkStat(player, "Health:"));
         playerDefence.put(playerUUID, checkStat(player, "Defence:"));
         playerStrength.put(playerUUID, checkStat(player, "Strength:"));
-        playerCritDamage.put(playerUUID, checkStat(player, "Crit Damage:"));
-        playerCritChance.put(playerUUID, checkStat(player, "Crit Chance:"));
+        playerCritDamage.put(playerUUID, 50 + checkStat(player, "Crit Damage:"));
+        playerCritChance.put(playerUUID, 30 + checkStat(player, "Crit Chance:"));
         playerIntelligence.put(playerUUID, checkStat(player, "Intelligence:"));
     }
 
@@ -46,7 +44,7 @@ public class PlayerStats {
         statAmount += checkLeggings(player, stat);
         statAmount += checkBoots(player, stat);
         statAmount += checkHand(player, stat);
-        return statAmount + 100;
+        return statAmount;
     }
 
     public static Integer checkHelmet(Player player, String stat){

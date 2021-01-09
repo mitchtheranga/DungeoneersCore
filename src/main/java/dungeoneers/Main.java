@@ -1,11 +1,10 @@
 package dungeoneers;
 
-import dungeoneers.PlayerEvents.BlockEvents;
-import dungeoneers.PlayerEvents.CheckStatsCommand;
-import dungeoneers.PlayerEvents.JoinLeaveEvents;
-import dungeoneers.PlayerEvents.PlayerStats;
+import dungeoneers.Events.BlockEvents;
+import dungeoneers.Events.DamageEvents.PlayerDamageMobEvents;
+import dungeoneers.Events.JoinLeaveEvents;
+import dungeoneers.Events.PlayerStats;
 import org.bukkit.Bukkit;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -19,7 +18,7 @@ public final class Main extends JavaPlugin {
         checkStats();
         registerEvents();
         getCommand("testitem").setExecutor(new GiveTestItem());
-        getCommand("checkstats").setExecutor(new CheckStatsCommand());
+        getCommand("checkstats").setExecutor(new CheckStatsCommand(this));
     }
 
     @Override
@@ -30,6 +29,8 @@ public final class Main extends JavaPlugin {
     public void registerEvents(){
         new JoinLeaveEvents(this);
         new BlockEvents(this);
+        new PlayerDamageMobEvents(this);
+        new CheckStatsCommand(this);
     }
 
     public void checkStats() {

@@ -1,4 +1,4 @@
-package dungeoneers.PlayerEvents;
+package dungeoneers.Events;
 
 import dungeoneers.Main;
 import org.bukkit.Bukkit;
@@ -7,10 +7,10 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityExplodeEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-public class BlockEvents implements Listener {
+public class JoinLeaveEvents implements Listener {
     public final Main plugin;
 
-    public BlockEvents(Main plugin){
+    public JoinLeaveEvents(Main plugin){
         this.plugin = plugin;
 
         Bukkit.getPluginManager().registerEvents(this, plugin);
@@ -22,7 +22,7 @@ public class BlockEvents implements Listener {
     }
 
     @EventHandler
-    public void onBlockExplode(EntityExplodeEvent e) {
+    public void onExplode(EntityExplodeEvent e) {
         e.blockList().clear();
     }
 }

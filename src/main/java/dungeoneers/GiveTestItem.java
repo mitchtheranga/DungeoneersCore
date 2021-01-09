@@ -83,15 +83,12 @@ public class GiveTestItem implements CommandExecutor {
             if (true) {
                 ItemStack item = new ItemStack(Material.WOOD_SWORD);
                 ItemMeta meta = item.getItemMeta();
-                meta.setDisplayName(Utils.chat("&3Test Item"));
+                meta.setDisplayName(Utils.chat("&3Test Sword"));
                 ArrayList<String> lore = new ArrayList<String>();
+                lore.add(Utils.chat("&7Damage: &c+50"));
                 lore.add(Utils.chat("&7Strength: &c+15"));
-                lore.add(Utils.chat("&7Crit Chance: &c+11"));
-                lore.add(Utils.chat("&7Crit Damage: &c+16"));
-                lore.add(Utils.chat(""));
-                lore.add(Utils.chat("&7Health: &a-12"));
-                lore.add(Utils.chat("&7Defence: &a-5"));
-                lore.add(Utils.chat("&7Intelligence: &a-18"));
+                lore.add(Utils.chat("&7Crit Chance: &c+10"));
+                lore.add(Utils.chat("&7Crit Damage: &c+30"));
                 meta.setLore(lore);
                 item.setItemMeta(meta);
                 player.getInventory().addItem(item);
