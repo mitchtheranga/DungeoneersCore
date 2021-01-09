@@ -25,7 +25,7 @@ public class JoinLeaveEvents implements Listener {
     }
 
     @EventHandler
-    public void onBlockExplode(EntityExplodeEvent e) {
+    public void onExplode(EntityExplodeEvent e) {
         e.blockList().clear();
     }
 }
