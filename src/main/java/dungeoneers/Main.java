@@ -1,5 +1,6 @@
 package dungeoneers;
 
+import dungeoneers.PlayerEvents.BlockEvents;
 import dungeoneers.PlayerEvents.CheckStatsCommand;
 import dungeoneers.PlayerEvents.JoinLeaveEvents;
 import dungeoneers.PlayerEvents.PlayerStats;
@@ -15,7 +16,7 @@ public final class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         plugin = this;
-        registerPlayerEvents();
+        registerEvents();
         getCommand("testitem").setExecutor(new GiveTestItem());
         getCommand("checkstats").setExecutor(new CheckStatsCommand());
 
@@ -27,8 +28,9 @@ public final class Main extends JavaPlugin {
         // Plugin shutdown logic
     }
 
-    public void registerPlayerEvents(){
+    public void registerEvents(){
         new JoinLeaveEvents(this);
+        new BlockEvents(this);
     }
 
     public void checkStats() {

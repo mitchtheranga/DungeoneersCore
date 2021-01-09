@@ -2,18 +2,15 @@ package dungeoneers.PlayerEvents;
 
 import dungeoneers.Main;
 import org.bukkit.Bukkit;
-import org.bukkit.entity.Entity;
-import org.bukkit.entity.TNTPrimed;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.BlockExplodeEvent;
 import org.bukkit.event.entity.EntityExplodeEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-public class JoinLeaveEvents implements Listener {
+public class BlockEvents implements Listener {
     public final Main plugin;
 
-    public JoinLeaveEvents(Main plugin){
+    public BlockEvents(Main plugin){
         this.plugin = plugin;
 
         Bukkit.getPluginManager().registerEvents(this, plugin);
