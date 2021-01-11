@@ -8,3 +8,4 @@ website: hyskies.net
 commands:
   testitem:
   checkstats:
+  setrarity:

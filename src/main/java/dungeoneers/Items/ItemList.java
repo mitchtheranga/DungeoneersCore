@@ -7,6 +7,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
 
@@ -23,8 +24,9 @@ public class ItemList {
                     if (item.getItemMeta().hasDisplayName()) {
                         for (ItemStack lItem : itemList) {
                             if (ChatColor.stripColor(item.getItemMeta().getDisplayName()).equalsIgnoreCase(ChatColor.stripColor(lItem.getItemMeta().getDisplayName()))) {
-                                item.setItemMeta(lItem.getItemMeta());
-                                Bukkit.broadcastMessage("Updated item " + lItem.getItemMeta().getDisplayName());
+                                item.setItemMeta(Utils.changeRarity(lItem, Utils.checkRarity(item)).getItemMeta());
+                                ItemMeta newItem = Utils.changeRarity(lItem, Utils.checkRarity(item)).getItemMeta();
+                                Bukkit.broadcastMessage(Utils.chat("Updated item " + newItem.getDisplayName()));
                             }
                         }
                     }
