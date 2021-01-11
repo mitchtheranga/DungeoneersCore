@@ -73,7 +73,6 @@ public class CheckStatsCommand implements CommandExecutor,Listener {
                     player.openInventory(inv);
                 }
             }, 1L);
-
         }
         return false;
     }

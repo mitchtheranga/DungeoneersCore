@@ -11,14 +11,14 @@ public class SwordOfLegends {
     public static ItemStack swordOfLegends(){
         ItemStack item = new ItemStack(Material.DIAMOND_SWORD);
         ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName(Utils.chat("&5Sword Of Legends"));
+        meta.setDisplayName(Utils.chat("&6Sword Of Legends"));
         ArrayList<String> lore = new ArrayList<String>();
-        lore.add(Utils.chat("&7Damage: &c+200"));
+        lore.add(Utils.chat("&7Damage: &c+210"));
         lore.add(Utils.chat("&7Strength: &c+125"));
         lore.add(Utils.chat("&7Crit Chance: &c+100"));
-        lore.add(Utils.invis(String.valueOf(System.currentTimeMillis())));
-        lore.add(Utils.chat("&8this item can be reforged."));
-        lore.add(Utils.chat("&5&lEPIC SWORD"));
+        int rand = Utils.getRandomInt(9999);
+        lore.add(Utils.invis(String.valueOf(System.currentTimeMillis() / rand)));
+        lore.add(Utils.chat("&6&lLEGENDARY SWORD"));
         meta.setLore(lore);
         item.setItemMeta(meta);
         return item;
