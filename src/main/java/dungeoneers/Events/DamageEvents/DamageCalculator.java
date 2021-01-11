@@ -42,7 +42,6 @@ public class DamageCalculator {
         double chance = PlayerStats.playerCritChance.get(player.getUniqueId());
         boolean crit = false;
         if(Utils.getRandomInt(99) < chance) {
-            Bukkit.broadcastMessage("crit");
             crit = true;
         }
         double cdamage = 0;

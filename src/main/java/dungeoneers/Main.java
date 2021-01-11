@@ -3,6 +3,7 @@ package dungeoneers;
 import dungeoneers.Events.BlockEvents;
 import dungeoneers.Events.DamageEvents.PlayerDamageMobEvents;
 import dungeoneers.Events.JoinLeaveEvents;
+import dungeoneers.Events.MobSummonEvents;
 import dungeoneers.Events.PlayerStats;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -31,6 +32,7 @@ public final class Main extends JavaPlugin {
         new BlockEvents(this);
         new PlayerDamageMobEvents(this);
         new CheckStatsCommand(this);
+        new MobSummonEvents(this);
     }
 
     public void checkStats() {
