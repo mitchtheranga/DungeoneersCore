@@ -10,12 +10,12 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public class DamageCalculator {
     public static Integer damageCalc(Player player){
-        double damage = 1;
+        double damage = 10;
         PlayerStats.checkStats(player.getUniqueId());
         if(player.getItemInHand().getType() != null){
             ItemStack item = player.getInventory().getItemInHand();
             if(!item.hasItemMeta()){
-                damage = 1;
+                damage = 10;
             }else {
                 ItemMeta meta = item.getItemMeta();
                 if (meta.hasLore()) {
@@ -50,7 +50,9 @@ public class DamageCalculator {
             cdamage = (PlayerStats.playerCritDamage.get(player.getUniqueId()));
         }
         double strength = (PlayerStats.playerStrength.get(player.getUniqueId()));
-        Bukkit.broadcastMessage("str " + strength + " dmg " + damage + " cdmg " + cdamage);
+        if(false) {
+            Bukkit.broadcastMessage("str " + strength + " dmg " + damage + " cdmg " + cdamage);
+        }
         if(strength == 0){
             if(crit) {
                 return (int) Math.round(damage * (cdamage / 100));
@@ -58,9 +60,9 @@ public class DamageCalculator {
             return (int) Math.round(damage);
         }else {
             if(crit) {
-                return (int)  Math.round(damage * (10 + (strength / 100)) * (1 + (cdamage / 100)));
+                return (int)  Math.round(damage * (1 + (strength / 50)) * (1 + (cdamage / 100)));
             }
-            return (int) Math.round(damage * (10 + (strength / 100)));
+            return (int) Math.round(damage * (1 + (strength / 50)));
         }
 
     }
