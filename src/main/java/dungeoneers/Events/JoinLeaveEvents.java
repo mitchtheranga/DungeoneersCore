@@ -1,5 +1,6 @@
 package dungeoneers.Events;
 
+import dungeoneers.Items.ItemList;
 import dungeoneers.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
@@ -19,6 +20,7 @@ public class JoinLeaveEvents implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent e){
         PlayerStats.checkStats(e.getPlayer().getUniqueId());
+        ItemList.checkPlayerItems(e.getPlayer());
     }
 
     @EventHandler
