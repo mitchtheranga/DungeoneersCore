@@ -13,7 +13,7 @@ public class SwordOfLegends {
         ItemMeta meta = item.getItemMeta();
         meta.setDisplayName(Utils.chat("&6Sword Of Legends"));
         ArrayList<String> lore = new ArrayList<String>();
-        lore.add(Utils.chat("&7Damage: &c+210"));
+        lore.add(Utils.chat("&7Damage: &c+200"));
         lore.add(Utils.chat("&7Strength: &c+125"));
         lore.add(Utils.chat("&7Crit Chance: &c+100"));
         int rand = Utils.getRandomInt(9999);

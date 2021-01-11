@@ -21,11 +21,14 @@ public class SetRarityCommand implements CommandExecutor {
                 return true;
             }
             Player player = (Player) sender;
-            if (args.length <= 0) {
+            if(args.length <= 0) {
                 player.sendMessage(Utils.chat("&cIncorrect Usage! Do /setrarity <Rarity>."));
                 return true;
             }
+            String from = Utils.checkRarityColor(player.getItemInHand()) +  "&l" + Utils.checkRarity(player.getItemInHand()).toUpperCase();
             player.setItemInHand(Utils.changeRarity(player.getItemInHand(), args[0]));
+            ItemStack nItem = player.getItemInHand();
+            player.sendMessage(Utils.chat("&fChanged rarity from " + from + "&f to " + Utils.checkRarityColor(nItem) + "&l" + Utils.checkRarity(nItem).toUpperCase() + "&f."));
         }
         return false;
     }

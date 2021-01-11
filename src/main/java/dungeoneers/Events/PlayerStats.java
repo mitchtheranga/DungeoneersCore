@@ -57,6 +57,13 @@ public class PlayerStats {
             if(meta.hasLore()) {
                 for (String lore : meta.getLore()) {
                     if (lore.contains(stat)) {
+                        if(stat.contains(" ")){
+                            lore = lore.split(" ")[0] + " " + lore.split(" ")[1] + " " + lore.split(" ")[2];
+                        }else{
+                            lore = lore.split(" ")[0] + " " + lore.split(" ")[1];
+                        }
+                        lore = lore.split(" ")[0+1];
+                        Bukkit.broadcastMessage(lore);
                         lore = lore.replace(stat + " ", "");
                         Integer multiplier = 1;
                         if(lore.contains("+")){
@@ -85,6 +92,11 @@ public class PlayerStats {
             if(meta.hasLore()) {
                 for (String lore : meta.getLore()) {
                     if (lore.contains(stat)) {
+                        if(stat.contains(" ")){
+                            lore = lore.split(" ")[0] + " " + lore.split(" ")[1] + " " + lore.split(" ")[2];
+                        }else{
+                            lore = lore.split(" ")[0] + " " + lore.split(" ")[1];
+                        }
                         lore = lore.replace(stat + " ", "");
                         Integer multiplier = 1;
                         if(lore.contains("+")){
@@ -113,6 +125,11 @@ public class PlayerStats {
             if(meta.hasLore()) {
                 for (String lore : meta.getLore()) {
                     if (lore.contains(stat)) {
+                        if(stat.contains(" ")){
+                            lore = lore.split(" ")[0] + " " + lore.split(" ")[1] + " " + lore.split(" ")[2];
+                        }else{
+                            lore = lore.split(" ")[0] + " " + lore.split(" ")[1];
+                        }
                         lore = lore.replace(stat + " ", "");
                         Integer multiplier = 1;
                         if(lore.contains("+")){
@@ -141,6 +158,11 @@ public class PlayerStats {
             if(meta.hasLore()) {
                 for (String lore : meta.getLore()) {
                     if (lore.contains(stat)) {
+                        if(stat.contains(" ")){
+                            lore = lore.split(" ")[0] + " " + lore.split(" ")[1] + " " + lore.split(" ")[2];
+                        }else{
+                            lore = lore.split(" ")[0] + " " + lore.split(" ")[1];
+                        }
                         lore = lore.replace(stat + " ", "");
                         Integer multiplier = 1;
                         if(lore.contains("+")){
@@ -169,6 +191,11 @@ public class PlayerStats {
             if(meta.hasLore()) {
                 for (String lore : meta.getLore()) {
                     if (lore.contains(stat)) {
+                        if(stat.contains(" ")){
+                            lore = lore.split(" ")[0] + " " + lore.split(" ")[1] + " " + lore.split(" ")[2];
+                        }else{
+                            lore = lore.split(" ")[0] + " " + lore.split(" ")[1];
+                        }
                         lore = lore.replace(stat + " ", "");
                         Integer multiplier = 1;
                         if(lore.contains("+")){
