@@ -196,7 +196,8 @@ public class PlayerStats {
                         }else{
                             lore = lore.split(" ")[0] + " " + lore.split(" ")[1];
                         }
-                        lore = lore.replace(stat + " ", "");
+                        lore = lore.replace(stat, "");
+                        lore = lore.replace(" ", "");
                         Integer multiplier = 1;
                         if(lore.contains("+")){
                             multiplier = 1;
@@ -207,7 +208,7 @@ public class PlayerStats {
                             lore = lore.replace("-", "");
                         }
                         lore = ChatColor.stripColor(lore);
-                        return Integer.parseInt(lore) * multiplier;
+                        return Integer.parseInt(ChatColor.stripColor(lore)) * multiplier;
                     }
                 }
             }

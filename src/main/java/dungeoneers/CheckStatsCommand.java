@@ -43,7 +43,7 @@ public class CheckStatsCommand implements CommandExecutor,Listener {
                 player.sendMessage(Utils.chat("&cCrit Chance: " + PlayerStats.playerCritChance.get(playerUUID)));
                 player.sendMessage(Utils.chat("&aIntelligence: " + PlayerStats.playerIntelligence.get(playerUUID)));
             }
-            int defence = PlayerStats.playerHealth.get(playerUUID);
+            int defence = PlayerStats.playerDefence.get(playerUUID);
             if(defence < 0){
                 defence = 0;
             }

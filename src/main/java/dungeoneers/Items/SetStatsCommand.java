@@ -1,6 +1,5 @@
 package dungeoneers.Items;
 
-import dungeoneers.Events.PlayerStats;
 import dungeoneers.Utils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -8,10 +7,10 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-public class SetReforgeCommand implements CommandExecutor {
+public class SetStatsCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if(command.getName().equalsIgnoreCase("setreforge")) {
+        if(command.getName().equalsIgnoreCase("setstats")) {
             if(!(sender instanceof Player)){
                 sender.sendMessage(Utils.chat("&cYou must be a player to run this command!"));
                 return true;
