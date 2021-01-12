@@ -22,9 +22,4 @@ public class JoinLeaveEvents implements Listener {
         PlayerStats.checkStats(e.getPlayer().getUniqueId());
         ItemList.checkPlayerItems(e.getPlayer());
     }
-
-    @EventHandler
-    public void onExplode(EntityExplodeEvent e) {
-        e.blockList().clear();
-    }
 }

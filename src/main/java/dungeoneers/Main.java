@@ -7,6 +7,7 @@ import dungeoneers.Events.MobSummonEvents;
 import dungeoneers.Events.PlayerStats;
 import dungeoneers.Items.SetRarityCommand;
 import dungeoneers.Items.SetReforgeCommand;
+import dungeoneers.Items.SetStatsCommand;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -24,6 +25,7 @@ public final class Main extends JavaPlugin {
         getCommand("checkstats").setExecutor(new CheckStatsCommand(this));
         getCommand("setrarity").setExecutor(new SetRarityCommand());
         getCommand("setreforge").setExecutor(new SetReforgeCommand());
+        getCommand("setstats").setExecutor(new SetStatsCommand());
     }
 
     @Override

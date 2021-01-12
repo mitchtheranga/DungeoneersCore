@@ -88,6 +88,9 @@ public class Utils {
         List<String> lore = meta.getLore();
         String lastLine = lore.get(lore.size() - 1);
         String lastWord = lastLine.split(" ")[lastLine.split(" ").length - 1];
+        if(lastWord.contains("helmet") || lastWord.contains("chestplate") || lastWord.contains("leggings") || lastWord.contains("boot")){
+            return "armor";
+        }
         return ChatColor.stripColor(lastWord);
     }
 
@@ -113,7 +116,6 @@ public class Utils {
             amount *= -1;
         }
         int i = 0;
-        int spot = -1;
         boolean contains = false;
         List<String> origLore = meta.getLore();
         List<String> newLores = new ArrayList<>();
@@ -126,13 +128,12 @@ public class Utils {
                     String nLore = Utils.chat("&7" + stat + color + " " + multi + amount);
                     newLores.add(nLore);
                 }
-                i = meta.getLore().size() - 1;
             }else{
                 if(i != origLore.size() - 2 && i != origLore.size() - 1) {
                     newLores.add(origLore.get(i));
                 }
-                i += 1;
             }
+            i += 1;
         }
         if(!contains){
             if(weapon){

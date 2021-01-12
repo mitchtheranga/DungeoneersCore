@@ -34,47 +34,6 @@ public class PlayerDamageMobEvents implements Listener {
             e.setCancelled(true);
             return;
         }
-        Player player = (Player) e.getDamager();
-        Location mobLoc = mob.getLocation();
-        Location playerLoc = player.getLocation();
-        if(false) {
-            double difX = mobLoc.getX() - playerLoc.getX();
-            double difY = mobLoc.getY() - playerLoc.getY();
-            double difZ = mobLoc.getZ() - playerLoc.getZ();
-            Location sLoc = mobLoc;
-            double rX = Utils.getRandomInt(3) + 2;
-            rX = rX / 10;
-            double rY = Utils.getRandomInt(3) + 2;
-            rY = rY / 10;
-            double rZ = Utils.getRandomInt(3) + 2;
-            rZ = rZ / 10;
-            if (difX > 0 && difZ > 0) {
-                sLoc = new Location(sLoc.getWorld(), sLoc.getX() - rX, sLoc.getY() - rY + .75, sLoc.getZ() - rZ);
-            }
-            if (difX > 0 && difZ < 0) {
-                sLoc = new Location(sLoc.getWorld(), sLoc.getX() - rX, sLoc.getY() - rY + .75, sLoc.getZ() + rZ);
-            }
-            if (difX < 0 && difZ < 0) {
-                sLoc = new Location(sLoc.getWorld(), sLoc.getX() + rX, sLoc.getY() - rY + .75, sLoc.getZ() + rZ);
-            }
-            if (difX < 0 && difZ > 0) {
-                sLoc = new Location(sLoc.getWorld(), sLoc.getX() + rX, sLoc.getY() - rY + .75, sLoc.getZ() - rZ);
-            }
-            ArmorStand stand = (ArmorStand) mobLoc.getWorld().spawnEntity(sLoc, EntityType.ARMOR_STAND);
-            stand.setCustomName(Utils.chat("&7" + DamageCalculator.damageCalc((Player) e.getDamager()).toString()));
-            stand.setCustomNameVisible(true);
-            stand.setGravity(false);
-            stand.setCanPickupItems(false);
-            stand.setSmall(true);
-
-            Location difference = new Location(mobLoc.getWorld(), difX, difY, difZ);
-            Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
-                @Override
-                public void run() {
-                    stand.remove();
-                }
-            }, 20L);
-        }
         if(mob.getCustomName().contains(Utils.chat("&7[&fLvl 10&7] &cVillager &7"))){
             String name = mob.getCustomName();
             name = name.replace(Utils.chat("&7[&fLvl 10&7] &cVillager &7[&f"), "");

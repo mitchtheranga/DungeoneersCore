@@ -22,13 +22,10 @@ public class DamageCalculator {
                     for (String lore : meta.getLore()) {
                         if (lore.contains("Damage: ")) {
                             lore = lore.replace("Damage:" + " ", "");
-                            Integer multiplier = 1;
                             if (lore.contains("+")) {
-                                multiplier = 1;
                                 lore = lore.replace("+", "");
                             }
                             if (lore.contains("-")) {
-                                multiplier = -1;
                                 lore = lore.replace("-", "");
                             }
                             lore = ChatColor.stripColor(lore);

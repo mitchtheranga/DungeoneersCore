@@ -23,9 +23,9 @@ public class SetReforgeCommand implements CommandExecutor {
             }
             String ref = args[0];
             ItemStack item = player.getItemInHand();
-            if(ref.equalsIgnoreCase("defence:")){
+            if(ref.equalsIgnoreCase("stoned")){
                 if(!Utils.checkType(item).equalsIgnoreCase("sword")){
-                    player.sendMessage("&cThat reforge does not apply to this item.");
+                    player.sendMessage(Utils.chat("&cThat reforge does not apply to this item."));
                     return true;
                 }
                 player.setItemInHand(Utils.addStat(item, "Defence:", Integer.parseInt(args[1]), "&a", true));
