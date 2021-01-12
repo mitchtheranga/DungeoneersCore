@@ -24,7 +24,7 @@ public class SetStatsCommand implements CommandExecutor {
             ItemStack item = player.getItemInHand();
             if(ref.equalsIgnoreCase("Damage")){
                 if(!Utils.checkType(item).equalsIgnoreCase("sword")){
-                    player.sendMessage(Utils.chat("&cThat reforge does not apply to this item."));
+                    player.sendMessage(Utils.chat("&cThat stat does not apply to this item."));
                     return true;
                 }
                 player.setItemInHand(Utils.addStat(item, "Damage:", Integer.parseInt(args[1]), "&c", true));
@@ -32,7 +32,7 @@ public class SetStatsCommand implements CommandExecutor {
             if(ref.equalsIgnoreCase("Strength")){
                 if(!Utils.checkType(item).equalsIgnoreCase("sword")){
                     if(!Utils.checkType(item).equalsIgnoreCase("armor")){
-                        player.sendMessage(Utils.chat("&cThat reforge does not apply to this item."));
+                        player.sendMessage(Utils.chat("&cThat stat does not apply to this item."));
                         return true;
                     }
                 }
@@ -41,7 +41,7 @@ public class SetStatsCommand implements CommandExecutor {
             if(ref.equalsIgnoreCase("CritDamage")){
                 if(!Utils.checkType(item).equalsIgnoreCase("sword")){
                     if(!Utils.checkType(item).equalsIgnoreCase("armor")){
-                        player.sendMessage(Utils.chat("&cThat reforge does not apply to this item."));
+                        player.sendMessage(Utils.chat("&cThat stat does not apply to this item."));
                         return true;
                     }
                 }
@@ -50,7 +50,7 @@ public class SetStatsCommand implements CommandExecutor {
             if(ref.equalsIgnoreCase("CritChance")){
                 if(!Utils.checkType(item).equalsIgnoreCase("sword")){
                     if(!Utils.checkType(item).equalsIgnoreCase("armor")){
-                        player.sendMessage(Utils.chat("&cThat reforge does not apply to this item."));
+                        player.sendMessage(Utils.chat("&cThat stat does not apply to this item."));
                         return true;
                     }
                 }
@@ -59,7 +59,7 @@ public class SetStatsCommand implements CommandExecutor {
             if(ref.equalsIgnoreCase("Intelligence")){
                 if(!Utils.checkType(item).equalsIgnoreCase("sword")){
                     if(!Utils.checkType(item).equalsIgnoreCase("armor")){
-                        player.sendMessage(Utils.chat("&cThat reforge does not apply to this item."));
+                        player.sendMessage(Utils.chat("&cThat stat does not apply to this item."));
                         return true;
                     }
                 }
@@ -67,7 +67,7 @@ public class SetStatsCommand implements CommandExecutor {
             }
             if(ref.equalsIgnoreCase("Health")){
                 if(!Utils.checkType(item).equalsIgnoreCase("armor")){
-                    player.sendMessage(Utils.chat("&cThat reforge does not apply to this item."));
+                    player.sendMessage(Utils.chat("&cThat stat does not apply to this item."));
                     return true;
                 }
                 player.setItemInHand(Utils.addStat(item, "Health:", Integer.parseInt(args[1]), "&a", true));
@@ -75,7 +75,7 @@ public class SetStatsCommand implements CommandExecutor {
             if(ref.equalsIgnoreCase("Defence")){
                 if(!Utils.checkType(item).equalsIgnoreCase("sword")){
                     if(!Utils.checkType(item).equalsIgnoreCase("armor")){
-                        player.sendMessage(Utils.chat("&cThat reforge does not apply to this item."));
+                        player.sendMessage(Utils.chat("&cThat stat does not apply to this item."));
                         return true;
                     }
                 }

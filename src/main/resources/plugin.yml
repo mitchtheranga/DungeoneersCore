@@ -11,3 +11,4 @@ commands:
   setrarity:
   setreforge:
   setstats:
+  resetitem:

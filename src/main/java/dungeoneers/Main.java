@@ -5,6 +5,7 @@ import dungeoneers.Events.DamageEvents.PlayerDamageMobEvents;
 import dungeoneers.Events.JoinLeaveEvents;
 import dungeoneers.Events.MobSummonEvents;
 import dungeoneers.Events.PlayerStats;
+import dungeoneers.Items.ItemList;
 import dungeoneers.Items.SetRarityCommand;
 import dungeoneers.Items.SetReforgeCommand;
 import dungeoneers.Items.SetStatsCommand;
@@ -26,6 +27,7 @@ public final class Main extends JavaPlugin {
         getCommand("setrarity").setExecutor(new SetRarityCommand());
         getCommand("setreforge").setExecutor(new SetReforgeCommand());
         getCommand("setstats").setExecutor(new SetStatsCommand());
+        getCommand("resetitem").setExecutor(new ItemList());
     }
 
     @Override

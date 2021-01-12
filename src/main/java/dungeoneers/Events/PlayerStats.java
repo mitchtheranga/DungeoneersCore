@@ -215,4 +215,35 @@ public class PlayerStats {
         }
         return 0;
     }
+    public static Integer checkItemStats(ItemStack item, String stat) {
+        if (!item.hasItemMeta()) {
+            return 0;
+        }
+        ItemMeta meta = item.getItemMeta();
+        if (meta.hasLore()) {
+            for (String lore : meta.getLore()) {
+                if (lore.contains(stat)) {
+                    if (stat.contains(" ")) {
+                        lore = lore.split(" ")[0] + " " + lore.split(" ")[1] + " " + lore.split(" ")[2];
+                    } else {
+                        lore = lore.split(" ")[0] + " " + lore.split(" ")[1];
+                    }
+                    lore = lore.replace(stat, "");
+                    lore = lore.replace(" ", "");
+                    Integer multiplier = 1;
+                    if (lore.contains("+")) {
+                        multiplier = 1;
+                        lore = lore.replace("+", "");
+                    }
+                    if (lore.contains("-")) {
+                        multiplier = -1;
+                        lore = lore.replace("-", "");
+                    }
+                    lore = ChatColor.stripColor(lore);
+                    return Integer.parseInt(ChatColor.stripColor(lore)) * multiplier;
+                }
+            }
+        }
+        return 0;
+    }
 }

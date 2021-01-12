@@ -32,5 +32,4 @@ public class SetRarityCommand implements CommandExecutor {
         }
         return false;
     }
-
 }
