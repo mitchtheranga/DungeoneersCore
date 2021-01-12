@@ -26,8 +26,9 @@ public class SetRarityCommand implements CommandExecutor {
                 return true;
             }
             String from = Utils.checkRarityColor(player.getItemInHand()) +  "&l" + Utils.checkRarity(player.getItemInHand()).toUpperCase();
-            player.setItemInHand(Utils.changeRarity(player.getItemInHand(), args[0]));
+            player.setItemInHand(ItemList.refreshItem(Utils.changeRarity(player.getItemInHand(), args[0])));
             ItemStack nItem = player.getItemInHand();
+
             player.sendMessage(Utils.chat("&fChanged rarity from " + from + "&f to " + Utils.checkRarityColor(nItem) + "&l" + Utils.checkRarity(nItem).toUpperCase() + "&f."));
         }
         return false;

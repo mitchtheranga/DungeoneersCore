@@ -97,6 +97,30 @@ public class SetReforgeCommand implements CommandExecutor {
                 item = Utils.addReforge(item, "Stoned", 5, 0, 0, 0, 15, 0);
             }
         }
+        if(ref.equalsIgnoreCase("stoned")){
+            String rarity = Utils.checkRarity(item);
+            if(rarity.equalsIgnoreCase("supreme")){
+                item = Utils.addReforge(item, "Stoned", 35, 0, 0, 0, 50, 0);
+            }
+            if(rarity.equalsIgnoreCase("mythic")){
+                item = Utils.addReforge(item, "Stoned", 30, 0, 0, 0, 40, 0);
+            }
+            if(rarity.equalsIgnoreCase("legendary")){
+                item = Utils.addReforge(item, "Stoned", 25, 0, 0, 0, 35, 0);
+            }
+            if(rarity.equalsIgnoreCase("epic")){
+                item = Utils.addReforge(item, "Stoned", 20, 0, 0, 0, 30, 0);
+            }
+            if(rarity.equalsIgnoreCase("rare")){
+                item = Utils.addReforge(item, "Stoned", 15, 0, 0, 0, 25, 0);
+            }
+            if(rarity.equalsIgnoreCase("uncommon")){
+                item = Utils.addReforge(item, "Stoned", 10, 0, 0, 0, 20, 0);
+            }
+            if(rarity.equalsIgnoreCase("common")){
+                item = Utils.addReforge(item, "Stoned", 5, 0, 0, 0, 15, 0);
+            }
+        }
         return item;
     }
 }

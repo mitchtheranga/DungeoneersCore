@@ -60,6 +60,24 @@ public class ItemList implements CommandExecutor {
         return item;
     }
 
+    public static ItemStack updateItem(ItemStack item){
+        if(item != null) {
+            if(item.hasItemMeta()) {
+                if (item.getItemMeta().hasDisplayName()) {
+                    for (ItemStack lItem : itemList) {
+                        if (ChatColor.stripColor(item.getItemMeta().getDisplayName()).contains(ChatColor.stripColor(lItem.getItemMeta().getDisplayName()))) {
+                            SetReforgeCommand.resetReforgeList();
+                            if(SetReforgeCommand.reforgeList.contains(ChatColor.stripColor(item.getItemMeta().getDisplayName()).split(" ")[0])){
+                                item.setItemMeta(SetReforgeCommand.reforgeItem(item, ChatColor.stripColor(item.getItemMeta().getDisplayName().split(" ")[0])).getItemMeta());
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return item;
+    }
+
     public static void addItemsToList(){
         itemList.add(SwordOfLegends.swordOfLegends());
     }
