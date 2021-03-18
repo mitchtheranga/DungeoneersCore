@@ -2,7 +2,7 @@ name: Dungeoneers
 version: ${project.version}
 main: dungeoneers.Main
 api-version: 1.16
-authors: [Troggs, ooAddman, Caledonian_EH]
+authors: [Troggs, ooAddman, Caledonian_EH, mjmalec]
 description: Dungeoneers' Dungeon Core
 website: hyskies.net
 commands:
@@ -12,3 +12,4 @@ commands:
   setreforge:
   setstats:
   resetitem:
+  updateitem:

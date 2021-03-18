@@ -96,6 +96,18 @@ public class ItemList implements CommandExecutor {
             }
             player.setItemInHand(refreshItem(player.getItemInHand()));
         }
+        if(command.getName().equalsIgnoreCase("updateitem")) {
+            if(!(sender instanceof Player)){
+                sender.sendMessage(Utils.chat("&cYou must be a player to run this command!"));
+                return true;
+            }
+            Player player = (Player) sender;
+            if(args.length <= 0) {
+                player.sendMessage(Utils.chat("&cIncorrect Usage! Do /updateitem."));
+                return true;
+            }
+            player.setItemInHand(updateItem(player.getItemInHand()));
+        }
         return false;
     }
 }

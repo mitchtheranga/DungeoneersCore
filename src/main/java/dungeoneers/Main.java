@@ -28,6 +28,7 @@ public final class Main extends JavaPlugin {
         getCommand("setreforge").setExecutor(new SetReforgeCommand());
         getCommand("setstats").setExecutor(new SetStatsCommand());
         getCommand("resetitem").setExecutor(new ItemList());
+        getCommand("updateitem").setExecutor(new ItemList());
     }
 
     @Override
